@@ -1,0 +1,353 @@
+### Starting TaskPrologue of job 12880344 on w1456 at Tue Nov 10 07:31:26 CET 2026
+#   SLURM_JOB_NODELIST=w1456
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=4
+#   SLURM_EXPORT_ENV=NONE
+Running on cores 0-3 with govenor powersave
+### Finished TaskPrologue
++ set -v
+
+export SLURM_EXPORT_ENV=ALL
++ export SLURM_EXPORT_ENV=ALL
++ SLURM_EXPORT_ENV=ALL
+export SRUN_CPUS_PER_TASK=1
++ export SRUN_CPUS_PER_TASK=1
++ SRUN_CPUS_PER_TASK=1
+
+module load intel
++ module load intel
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load intel
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load intel
++ eval 'OCL_ICD_FILENAMES=libintelocl_emu.so:libalteracl.so:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/x64/libintelocl.so; export OCL_ICD_FILENAMES;
+LD_LIBRARY_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/x64:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/lib; export LD_LIBRARY_PATH;
+CMPLR_ROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0; export CMPLR_ROOT;
+LIBRARY_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib; export LIBRARY_PATH;
+MANPATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/documentation/en/man/common::; export MANPATH;
+_LMFILES_=/apps/modules/data/compiler/intel/2022.1.0; export _LMFILES_;
+LOADEDMODULES=intel/2022.1.0; export LOADEDMODULES;
+CMAKE_PREFIX_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/IntelDPCPP:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/; export CMAKE_PREFIX_PATH;
+PKG_CONFIG_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/lib/pkgconfig; export PKG_CONFIG_PATH;
+FPGA_VARS_ARGS=; export FPGA_VARS_ARGS;
+INTEL_ONEAPI_COMPILERS_ROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj; export INTEL_ONEAPI_COMPILERS_ROOT;
+ACL_BOARD_VENDOR_PATH=/opt/Intel/OpenCLFPGA/oneAPI/Boards; export ACL_BOARD_VENDOR_PATH;
+__MODULES_LMALTNAME=intel/2022.1.0\&as\|intel/default\&as\|intel/latest; export __MODULES_LMALTNAME;
+__MODULES_LMCONFLICT=intel/2022.1.0\&intel-oneapi-compilers\&intel; export __MODULES_LMCONFLICT;
+__MODULES_SHARE_MANPATH=:2; export __MODULES_SHARE_MANPATH;
+NLSPATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin/locale/%l_%t/%N; export NLSPATH;
+PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga/bin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/bin/intel64:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin; export PATH;
+INTELFPGAOCLSDKROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga; export INTELFPGAOCLSDKROOT;
+DIAGUTIL_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/sys_check/sys_check.sh; export DIAGUTIL_PATH;
+FPGA_VARS_DIR=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga; export FPGA_VARS_DIR;
+test 0;'
+OCL_ICD_FILENAMES=libintelocl_emu.so:libalteracl.so:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/x64/libintelocl.so; export OCL_ICD_FILENAMES;
+++ OCL_ICD_FILENAMES=libintelocl_emu.so:libalteracl.so:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/x64/libintelocl.so
+++ export OCL_ICD_FILENAMES
+LD_LIBRARY_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/x64:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/lib; export LD_LIBRARY_PATH;
+++ LD_LIBRARY_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/x64:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/lib
+++ export LD_LIBRARY_PATH
+CMPLR_ROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0; export CMPLR_ROOT;
+++ CMPLR_ROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0
+++ export CMPLR_ROOT
+LIBRARY_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib; export LIBRARY_PATH;
+++ LIBRARY_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib
+++ export LIBRARY_PATH
+MANPATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/documentation/en/man/common::; export MANPATH;
+++ MANPATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/documentation/en/man/common::
+++ export MANPATH
+_LMFILES_=/apps/modules/data/compiler/intel/2022.1.0; export _LMFILES_;
+++ _LMFILES_=/apps/modules/data/compiler/intel/2022.1.0
+++ export _LMFILES_
+LOADEDMODULES=intel/2022.1.0; export LOADEDMODULES;
+++ LOADEDMODULES=intel/2022.1.0
+++ export LOADEDMODULES
+CMAKE_PREFIX_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/IntelDPCPP:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/; export CMAKE_PREFIX_PATH;
+++ CMAKE_PREFIX_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/IntelDPCPP:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/
+++ export CMAKE_PREFIX_PATH
+PKG_CONFIG_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/lib/pkgconfig; export PKG_CONFIG_PATH;
+++ PKG_CONFIG_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/lib/pkgconfig
+++ export PKG_CONFIG_PATH
+FPGA_VARS_ARGS=; export FPGA_VARS_ARGS;
+++ FPGA_VARS_ARGS=
+++ export FPGA_VARS_ARGS
+INTEL_ONEAPI_COMPILERS_ROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj; export INTEL_ONEAPI_COMPILERS_ROOT;
+++ INTEL_ONEAPI_COMPILERS_ROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj
+++ export INTEL_ONEAPI_COMPILERS_ROOT
+ACL_BOARD_VENDOR_PATH=/opt/Intel/OpenCLFPGA/oneAPI/Boards; export ACL_BOARD_VENDOR_PATH;
+++ ACL_BOARD_VENDOR_PATH=/opt/Intel/OpenCLFPGA/oneAPI/Boards
+++ export ACL_BOARD_VENDOR_PATH
+__MODULES_LMALTNAME=intel/2022.1.0\&as\|intel/default\&as\|intel/latest; export __MODULES_LMALTNAME;
+++ __MODULES_LMALTNAME='intel/2022.1.0&as|intel/default&as|intel/latest'
+++ export __MODULES_LMALTNAME
+__MODULES_LMCONFLICT=intel/2022.1.0\&intel-oneapi-compilers\&intel; export __MODULES_LMCONFLICT;
+++ __MODULES_LMCONFLICT='intel/2022.1.0&intel-oneapi-compilers&intel'
+++ export __MODULES_LMCONFLICT
+__MODULES_SHARE_MANPATH=:2; export __MODULES_SHARE_MANPATH;
+++ __MODULES_SHARE_MANPATH=:2
+++ export __MODULES_SHARE_MANPATH
+NLSPATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin/locale/%l_%t/%N; export NLSPATH;
+++ NLSPATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/compiler/lib/intel64_lin/locale/%l_%t/%N
+++ export NLSPATH
+PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga/bin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/bin/intel64:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin; export PATH;
+++ PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga/bin:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/bin/intel64:/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+++ export PATH
+INTELFPGAOCLSDKROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga; export INTELFPGAOCLSDKROOT;
+++ INTELFPGAOCLSDKROOT=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga
+++ export INTELFPGAOCLSDKROOT
+DIAGUTIL_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/sys_check/sys_check.sh; export DIAGUTIL_PATH;
+++ DIAGUTIL_PATH=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/sys_check/sys_check.sh
+++ export DIAGUTIL_PATH
+FPGA_VARS_DIR=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga; export FPGA_VARS_DIR;
+++ FPGA_VARS_DIR=/apps/SPACK/0.18.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-compilers-2022.1.0-y2vz2k3joidylzrhmkrza2hzwzswb6yj/compiler/2022.1.0/linux/lib/oclfpga
+++ export FPGA_VARS_DIR
+test 0;
+++ test 0
++ _mlstatus=0
++ return 0
+make -C .. clean all       # build on the compute node (-xHost)
++ make -C .. clean all
+make: Entering directory '/home/hpc/hpcv/hpcv240v/exercises/e01'
+rm -rf ./build ./bin
+mkdir -p build/
+icx -iquote ./src/include -Wall -pedantic -Werror -std=c99 -O3 -xHost -MMD -MP -c src/main.c -o build/main.o
+mkdir -p build/
+icx -iquote ./src/include -Wall -pedantic -Werror -std=c99 -O3 -xHost -MMD -MP -c src/vec_sum.c -o build/vec_sum.o
+mkdir -p build/
+icx -iquote ./src/include -Wall -pedantic -Werror -std=c99 -O3 -xHost -MMD -MP -c src/get_time.c -o build/get_time.o
+mkdir -p bin/
+icx build/main.o build/vec_sum.o build/get_time.o -o bin/vecSum 
+make: Leaving directory '/home/hpc/hpcv/hpcv240v/exercises/e01'
+
+lscpu | grep -i "model name\|cache"    # records this node's cache sizes for your analysis
++ grep -i 'model name\|cache'
++ lscpu
+Model name:          Intel(R) Xeon(R) CPU E3-1240 v6 @ 3.70GHz
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            8192K
+
+STEPS=30                   # number of measurement points (>= 30)
++ STEPS=30
+RESULT=result_1_3.csv
++ RESULT=result_1_3.csv
+echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > $RESULT
++ echo ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime
+
+# Returns the array size in KiB for step i of n:
+# exponentially spaced from 2^0 = 1 KiB to 2^15 = 32768 KiB = 32 MiB
+step_kib() {
+    awk -v i="$1" -v n="$2" 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
+}
+
+for (( i = 0; i < STEPS; i++ ))
+do
+    KIB=$(step_kib $i $STEPS)
+    srun ../bin/vecSum $KIB 1000 >> $RESULT
+done
++ (( i = 0 ))
++ (( i < STEPS ))
+++ step_kib 0 30
+++ awk -v i=0 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=1
++ srun ../bin/vecSum 1 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 1 30
+++ awk -v i=1 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=1
++ srun ../bin/vecSum 1 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 2 30
+++ awk -v i=2 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=2
++ srun ../bin/vecSum 2 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 3 30
+++ awk -v i=3 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=3
++ srun ../bin/vecSum 3 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 4 30
+++ awk -v i=4 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=4
++ srun ../bin/vecSum 4 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 5 30
+++ awk -v i=5 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=6
++ srun ../bin/vecSum 6 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 6 30
+++ awk -v i=6 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=9
++ srun ../bin/vecSum 9 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 7 30
+++ awk -v i=7 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=12
++ srun ../bin/vecSum 12 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 8 30
+++ awk -v i=8 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=18
++ srun ../bin/vecSum 18 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 9 30
+++ awk -v i=9 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=25
++ srun ../bin/vecSum 25 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 10 30
+++ awk -v i=10 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=36
++ srun ../bin/vecSum 36 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 11 30
+++ awk -v i=11 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=52
++ srun ../bin/vecSum 52 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 12 30
+++ awk -v i=12 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=74
++ srun ../bin/vecSum 74 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 13 30
+++ awk -v i=13 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=106
++ srun ../bin/vecSum 106 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 14 30
+++ awk -v i=14 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=151
++ srun ../bin/vecSum 151 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 15 30
+++ awk -v i=15 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=217
++ srun ../bin/vecSum 217 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 16 30
+++ awk -v i=16 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=310
++ srun ../bin/vecSum 310 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 17 30
+++ awk -v i=17 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=444
++ srun ../bin/vecSum 444 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 18 30
+++ awk -v i=18 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=635
++ srun ../bin/vecSum 635 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 19 30
+++ awk -v i=19 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=909
++ srun ../bin/vecSum 909 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 20 30
+++ awk -v i=20 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=1300
++ srun ../bin/vecSum 1300 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 21 30
+++ awk -v i=21 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=1861
++ srun ../bin/vecSum 1861 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 22 30
+++ awk -v i=22 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=2664
++ srun ../bin/vecSum 2664 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 23 30
+++ awk -v i=23 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=3813
++ srun ../bin/vecSum 3813 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 24 30
+++ awk -v i=24 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=5457
++ srun ../bin/vecSum 5457 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 25 30
+++ awk -v i=25 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=7810
++ srun ../bin/vecSum 7810 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 26 30
+++ awk -v i=26 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=11177
++ srun ../bin/vecSum 11177 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 27 30
+++ awk -v i=27 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=15997
++ srun ../bin/vecSum 15997 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 28 30
+++ awk -v i=28 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=22895
++ srun ../bin/vecSum 22895 1000
++ (( i++  ))
++ (( i < STEPS ))
+++ step_kib 29 30
+++ awk -v i=29 -v n=30 'BEGIN { printf "%d\n", 2^(15*i/(n-1)) + 0.5 }'
++ KIB=32768
++ srun ../bin/vecSum 32768 1000
++ (( i++  ))
++ (( i < STEPS ))
+=== JOB_STATISTICS ===
+=== current date     : Tue Nov 10 07:33:01 CET 2026
+= Job-ID             : 12880344 on woody
+= Job-Name           : cluster_1_3.sh
+= Job-Command        : /home/hpc/hpcv/hpcv240v/exercises/e01/scripts/cluster_1_3.sh
+= Initial workdir    : /home/hpc/hpcv/hpcv240v/exercises/e01/scripts
+= Queue/Partition    : work
+= Slurm account      : hpcv with QOS=normal
+= Requested resources:  for 00:04:00
+= Elapsed runtime    : 00:01:36
+= Total RAM usage    : 0.1 GiB of requested  GiB (%)   
+= Node list          : w1456
+= Subm/Elig/Start/End: 2026-11-10T07:31:24 / 2026-11-10T07:31:24 / 2026-11-10T07:31:25 / 2026-11-10T07:33:01
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc               9.3G   104.9G   209.7G        N/A  24,020      300K     400K        N/A    

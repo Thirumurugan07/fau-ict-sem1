@@ -1,0 +1,18 @@
+=== JOB_STATISTICS ===
+=== current date     : Fri Nov  6 12:31:50 CET 2026
+= Job-ID             : 12862964 on woody
+= Job-Name           : cluster.sh
+= Job-Command        : /home/hpc/hpcv/hpcv240v/exercises/e01/scripts/cluster.sh
+= Initial workdir    : /home/hpc/hpcv/hpcv240v/exercises/e01/scripts
+= Queue/Partition    : work
+= Slurm account      : hpcv with QOS=normal
+= Requested resources:  for 00:07:00
+= Elapsed runtime    : 00:03:08
+= Total RAM usage    : 0.1 GiB of requested  GiB (%)   
+= Node list          : w1456
+= Subm/Elig/Start/End: 2026-11-06T12:28:42 / 2026-11-06T12:28:42 / 2026-11-06T12:28:42 / 2026-11-06T12:31:50
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc               8.3G   104.9G   209.7G        N/A  23,778      300K     400K        N/A    

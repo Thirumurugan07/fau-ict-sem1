@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <inttypes.h>
+#include "vec_sum.h"
+#include "get_time.h"
+
+static void usage_msg(void) {
+	fprintf(stderr, "Usage: ./vecSum <array size in kiB> <minimal runtime in milliseconds>\n");
+	return;
+}
+
+int main(int argc, char *argv[]) {
+	uint64_t minimal_runtime_ms = 0u;
+	uint64_t actual_runtime_us  = 0u;
+	uint64_t array_size_bytes   = 0u;  // The allocated array size in bytes
+	uint64_t runs               = 0u;
+	uint64_t start              = 0u;
+	uint64_t stop               = 0u;
+	double   adds_per_second    = 0u;
+
+	if(argc != 3 || argv == NULL) {
+		usage_msg();
+		return -1;
+	}
+
+	//TODO: parse parameter: size of the vector in KiB
+	uint32_t size_in_kib = atoi(argv[1]);
+	array_size_bytes = (uint64_t) size_in_kib * 1024u;
+	if(array_size_bytes / sizeof(float) > INT32_MAX) {
+		fprintf(stderr, "Array is too large for vec_sum's int32_t length.\n");
+		return -1;
+	}
+	int32_t no_of_elements = array_size_bytes / sizeof(float);
+	if(no_of_elements <= 0) {
+		fprintf(stderr, "Array size must fit at least one float and the vec_sum length.\n");
+		return -1;
+	}
+
+	//TODO: parse parameter: runtime in milliseconds
+	minimal_runtime_ms = atoi(argv[2]);
+	if(minimal_runtime_ms == 0u) {
+		fprintf(stderr, "Minimum runtime must be greater than zero.\n");
+		return -1;
+	}
+
+	//TODO: allocate memory and initialize it with nonzero values
+	float *array = malloc(array_size_bytes);
+	if(array == NULL) {
+		perror("malloc");
+		return -1;
+	}
+	for(int32_t i = 0; i < no_of_elements; i++) {
+		array[i] = 1.0f;
+	}
+
+	volatile float sum = 0.0f;
+	for(runs = 1u; actual_runtime_us < minimal_runtime_ms * 1000u; runs = runs << 1u) {
+		start = get_time_micros();
+		for(uint64_t i = 0u; i < runs; i++) {
+			sum = vec_sum(array, no_of_elements);
+		}
+		stop  = get_time_micros();
+		actual_runtime_us = stop - start;
+	}
+	runs /= 2; // The for-loop doubles runs after the final measured iteration.
+
+	//TODO: calculate and print
+	adds_per_second = (double) runs * no_of_elements * 1000000.0 / actual_runtime_us;
+	(void) sum;
+
+	// The ouput format:
+	// 	1. uint64_t array size in bytes
+	// 	2. double   number of additions per second
+	// 	3. uint64_t actual runtime in milliseconds
+	// 	4. uint64_t minimal runtime in milliseconds
+	fprintf(stdout, "%" PRIu64 ",%lf,%" PRIu64 ",%" PRIu64 "\n", array_size_bytes, adds_per_second, actual_runtime_us/1000, minimal_runtime_ms);
+
+	free(array);
+	return 0;
+}

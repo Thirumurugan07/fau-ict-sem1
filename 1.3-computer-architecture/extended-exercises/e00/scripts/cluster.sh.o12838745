@@ -1,0 +1,49 @@
+### Starting TaskPrologue of job 12838745 on w1502 at Tue Nov  3 11:11:06 CET 2026
+#   SLURM_JOB_NODELIST=w1502
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=1
+#   SLURM_EXPORT_ENV=NONE
+Running on cores 2 with govenor powersave
+### Finished TaskPrologue
+set -e  # Stop script after error occurs
+
+# To ensure 'srun' runs as expected
+export SLURM_EXPORT_ENV=ALL
+export SRUN_CPUS_PER_TASK=1  # Value should match the SBATCH --cpus-per-task option
+
+
+
+run_hello() {
+    srun ../bin/hello
+}
+
+for (( i = 0; i < 5; i += 1 ))
+do
+    echo "Run $i"
+    run_hello
+done
+Run 0
+[2026-11-03T11:11:06.904] error: execve(): /home/hpc/hpcv/hpcv240v/exercises/e00/scripts/../bin/hello: No such file or directory
+srun: error: w1502: task 0: Exited with exit code 2
+srun: Terminating StepId=12838745.0
+=== JOB_STATISTICS ===
+=== current date     : Tue Nov  3 11:11:07 CET 2026
+= Job-ID             : 12838745 on woody
+= Job-Name           : cluster.sh
+= Job-Command        : /home/hpc/hpcv/hpcv240v/exercises/e00/scripts/cluster.sh
+= Initial workdir    : /home/hpc/hpcv/hpcv240v/exercises/e00/scripts
+= Queue/Partition    : work
+= Slurm account      : hpcv with QOS=normal
+= Requested resources:  for 00:01:00
+= Elapsed runtime    : 00:00:02
+= Total RAM usage    : 0.0 GiB of requested  GiB (%)   
+= Node list          : w1502
+= Subm/Elig/Start/End: 2026-11-03T11:11:03 / 2026-11-03T11:11:03 / 2026-11-03T11:11:05 / 2026-11-03T11:11:07
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc              96.0K   104.9G   209.7G        N/A      28      300K     400K        N/A    
